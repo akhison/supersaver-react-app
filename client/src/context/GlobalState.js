@@ -56,7 +56,6 @@ class GlobalContextProvider extends Component {
          const response = await axios.post('/user/create-account', {});
          const {data} = response;
          if (data.success) {
-             console.log('passKORD', data.pass_code)
             localStorage.setItem('pass_code', data.pass_code);
             this.setState({
                 isLoading: false, 
@@ -97,8 +96,7 @@ class GlobalContextProvider extends Component {
                 } else {
                     this.setState({isLoading: false, message: data.message})
                 }
-            } catch (error) {
-                console.log(error)            
+            } catch (error) {        
                 this.setState({isLoading: false, isError: true, message: "An error occured!"})
             }
      }
@@ -111,7 +109,7 @@ class GlobalContextProvider extends Component {
     sumSavingsTotal =  (savings) => {
         let amountTotal = 0;
          savings.forEach(data => {
-            return amountTotal += data.amount;
+            amountTotal += data.amount;
          })      
          return amountTotal;
     }
