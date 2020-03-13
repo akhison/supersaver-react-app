@@ -1,0 +1,25 @@
+.transactions-wrapper {
+    padding: 0 30px;
+    height: 210px;
+    overflow: auto;
+    margin-top: 10px;
+    margin-bottom: 20PX;
+}
+
+.transactions-list {
+    border-top: 2px solid #333;
+    list-style-type: none;
+    padding: 0;
+}
+
+.transactions-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+li:nth-child(even) {
+    background: rgb(243, 241, 241)
+}

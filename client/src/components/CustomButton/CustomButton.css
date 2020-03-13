@@ -1,0 +1,12 @@
+
+.custom-btn {
+    border: none;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.custom-btn:hover {
+    opacity: 1;
+}

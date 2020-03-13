@@ -1,0 +1,29 @@
+{
+  "name": "suppersavers",
+  "version": "1.0.0",
+  "description": "daily savings app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "deploy": "cd client && npm run build && cd ..",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "akhison",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6",
+    "morgan": "^1.9.1",
+    "serve": "^11.1.0",
+    "shortid": "^2.2.14"
+  }
+}

@@ -1,0 +1,16 @@
+.top-nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 20px 0 10px;
+
+}
+
+.top-bar-error {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
