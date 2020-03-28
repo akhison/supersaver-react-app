@@ -45,6 +45,7 @@ module.exports = {
             });
   
          } catch (error) {
+               console.log('creating account', error)
                 res.status(400).json({
                   success: false,
                   message: "error creating account",
