@@ -51,7 +51,7 @@ class GlobalContextProvider extends Component {
 
     //CREATE A NEW USER ACCOUNT AND GENERATE PASS CODE
     createNewAccount = async () => {
-        this.setState({isLoading: true})
+        this.setState({isLoading: true, isError: false})
         try {
          const response = await axios.post('/user/create-account', {});
          const {data} = response;
@@ -75,7 +75,7 @@ class GlobalContextProvider extends Component {
 
      //API OPERATIONS WITH CUSTOM PARAMS
     accessAndUpdateAccount = async ({url, pass_code, amount}) => {        
-        this.setState({isLoading: true, message: ''})
+        this.setState({isLoading: true, message: '', isError: false})
             try {
                 const response = await axios.post('/user/' + url, {pass_code, amount});
                 const {data} = response;
@@ -94,7 +94,7 @@ class GlobalContextProvider extends Component {
                         window.location.href = '/'
                     }
                 } else {
-                    this.setState({isLoading: false, message: data.message})
+                    this.setState({isLoading: false, message: data.message, isError: true})
                 }
             } catch (error) {        
                 this.setState({isLoading: false, isError: true, message: "An error occured!"})

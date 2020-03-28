@@ -49,9 +49,16 @@ class AccountAccess extends Component {
 
      return (
          <React.Fragment>
-              {this.state.showError && <Alert severity="error" className="top-bar-error">
+            {this.state.showError && 
+               <Alert severity="error" className="top-bar-error">
                   {"kindly type in your pass code. your passcode should be 7 character and case sensitive."}
-            </Alert>}
+               </Alert>
+            }
+            {isError && 
+               <Alert severity="error" className="top-bar-error">
+                  {"Pass code Error! please try again"}
+               </Alert>
+            }
             <Header />
             <div className="main-container">
                 <div style={{textAlign:'right', padding: "5px 20px 0 0"}}>
